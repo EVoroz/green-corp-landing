@@ -27,7 +27,6 @@ this.velocity = generateDecimalBetween(20, 40);
 this.movementX = generateDecimalBetween(-2, 2) / this.velocity;
 this.movementY = generateDecimalBetween(1, 20) / this.velocity;
 
-
      }
     
      move() {
@@ -40,7 +39,54 @@ this.movementY = generateDecimalBetween(1, 20) / this.velocity;
         }
     }
  }
- 
+ class CanvasBackground {
+  constructor(id) {
+      this.canvas = document.getElementById(id);
+      this.ctx = this.canvas.getContext("2d");
+      this.dpr = window.devicePixelRatio;
+  }
+
+  start() {
+      this.canvasSize();
+      this.generateBubbles();
+      this.animate();
+  }
+
+  canvasSize() {
+      this.canvas.width = this.canvas.offsetWidth * this.dpr;
+      this.canvas.height = this.canvas.offsetHeight * this.dpr;
+
+      this.ctx.scale(this.dpr, this.dpr);
+  }
+
+  animate() {
+      this.ctx.clearRect(0, 0, this.canvas.clientWidth, this.canvas.clientHeight);
+
+      this.bubblesList.forEach((bubble) => {
+          bubble.move();
+          this.ctx.translate(bubble.translateX, bubble.translateY);
+          this.ctx.beginPath();
+          this.ctx.arc(0, 0, bubble.size, 0, 2 * Math.PI);
+          this.ctx.fillStyle = "rgba(" + bubble.color + "," + bubble.alpha + ")";
+          this.ctx.fill();
+          this.ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+      });
+
+      requestAnimationFrame(this.animate.bind(this));
+  }
+
+  generateBubbles() {
+      this.bubblesList = [];
+      for (let i = 0; i < BUBBLE_DENSITY; i++) {
+          this.bubblesList.push(new Bubble(this.canvas))
+      }
+  }
+}
+
+const canvas = new CanvasBackground("orb-canvas");
+canvas.start();
+
+
 
      
   
