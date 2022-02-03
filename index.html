@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <title>Солнечные батареи GreenCorp</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="main.css"
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+   <link rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+   />
+   <link rel='stylesheet' href='fa/all.min.css'>
+     <title>Солнечные батареи GreenCorp</title>
+     <link rel="stylesheet" href="main.css">
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
 integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-</head>
+   </head>
 <body>
   <header>
     <img class="header__logo" src="img/logo.svg">
     <div class="header__controls">
-      <a href="#contacts">Контакты</a>
-      <button>Заказать</button>
+      <a href="#form">Контакты</a>
+      <button type="button">Заказать</button>
     </div>
+    
   </header>
   <section class="about">
     <canvas class="orb-canvas" id="orb-canvas"></canvas>
     <div class="about__info animate__animated animate__fadeInLeft animate__slow">
       <h1>Солнечные панели GreenRobotic</h1>
       <p>Производите дешёвую экологически чистую электроэнергию из солнечного света</p>
-      <button>Узнать подробнее <i class="fas fa-angle-right"></i></button>
+      <button class="more-button" href="#features">Узнать подробнее <i class="fas fa-angle-right"></i></button>
   </div>
   <div class="about__images animate__animated animate__fadeInRight animate__slow">
       <img class="about__sun-image" src="img/sun.png">
@@ -58,9 +63,9 @@ integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEB
 <div class="features__feedback">
   <div class="features__feedback-left">
     <h2>
-       Нам доверяет
+      Нам доверяет
       <br>
-       5000+ счастливых клиентов
+      <div class="features__clients-count">5000+</div> счастливых клиентов
     </h2>
     <p>
        Мы помогли тысячам людей перейти на зеленую энергию.
@@ -107,7 +112,7 @@ integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEB
     </div>
   </div>
 </section>
-   <section class="form">
+<section class="form" id='form'>
     <div class="form__containter">
       <h1>Оставьте свои контакты</h1>
       <p>Поможем подобрать модель.
@@ -133,9 +138,10 @@ integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEB
              <option value="10-30">10 000₽ – 30 000₽</option>
             <option value="30-60">30 000₽ – 60 000₽</option>
             <option value="60-100">60 000₽ – 100 000₽</option>
-            <option value="100+">100 000₽</option>
+            <option value="other">Другое</option>
           </select>
         </div>
+        
          <button type="submit" class="form__submit">Отправить заявку</button>
          </form>
          </div>
@@ -168,8 +174,8 @@ integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEB
       <p>GreenCorp © 2021</p>
     </div>
   </footer>
-  <script src="js/canvas.js">
-
-  </script>
+  <script src='fa/js/all.min.js'> </script>
+  <script src="js/canvas.js"></script>
+<script src="js/animations.js"></script>
 </body>
 </html>

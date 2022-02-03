@@ -11,12 +11,20 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    position: sticky;
+    position: fixed;
+    left: 0;
+    right: 0;
+    transition: box-shadow, background-color .25s ease;
     top: 0;
-    background: white;
+    background: none;
     z-index: 1;
 }
-  
+
+.header__scrolled {
+  background-color: white;
+  box-shadow: 0 12px 34px -11px rgb(65 62 101 / 10%);
+}
+ 
 .header__logo {
     height: 30px;
   }
@@ -51,7 +59,7 @@ body {
     align-items: center;
     justify-content: space-around;
     padding-bottom: 115px;
-    padding-top: 115px;
+    padding-top: 200px;
     position: relative;   
   background: url('img/back.png') no-repeat;
   background-position: center;
@@ -62,6 +70,7 @@ body {
   position: absolute;
   top: 0;
   height: 100%;
+  width: 100%;
   right: 0;
 }
   .about__image {
